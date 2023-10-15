@@ -134,3 +134,6 @@ dist
 *.pdf
 publication.json
 themes/
+
+# Python
+__pycache__/
