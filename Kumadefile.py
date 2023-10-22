@@ -12,7 +12,17 @@ project_dir = Path(__file__).parent
 
 pdf_path = project_dir / "KumadeBook.pdf"
 
-md_files = ["manuscript.md"]
+md_files = [
+    "cover1.md",
+    "opening.md",
+    "toc.md",
+    "chap1_intro.md",
+    "chap2_getstart.md",
+    "chap3_kumadefile.md",
+    "chap4_usecase.md",
+    "closing.md",
+    "cover4.md",
+]
 
 
 # Initialize project ----------
