@@ -1,0 +1,3 @@
+@page :nth(1) {
+    counter-increment: chapter;
+}

@@ -1,0 +1,23 @@
+.footnote {
+    counter-increment: footnote;
+}
+
+.footnote {
+    float: footnote;
+    text-align: left;
+    font-size: 0.8rem;
+
+    &::footnote-call,
+    &::footnote-marker {
+        content: '[' counter(footnote) ']';
+    }
+
+    &::footnote-call {
+        font-size: 80%;
+        margin: 0 0.3rem;
+    }
+
+    &::footnote-marker {
+        margin-right: 0.2rem;
+    }
+}

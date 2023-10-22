@@ -24,6 +24,10 @@ md_files = [
     "cover4.md",
 ]
 
+theme_dir = project_dir / "theme"
+
+css_path = theme_dir / "theme_ebook.css"
+
 
 # Initialize project ----------
 
@@ -53,9 +57,34 @@ def build() -> None:
     pass
 
 @ku.file(pdf_path)
-@ku.depend("init_project", *md_paths)
+@ku.depend("init_project", css_path, *md_paths)
 def build_pdf() -> None:
     subprocess.run(["npm", "run", "build"])
+
+
+# Build Theme ----------
+
+theme_node_modules_dir = theme_dir / "node_modules"
+scss_dir = theme_dir / "scss"
+scss_paths = list(scss_dir.glob("*.scss"))
+
+@ku.file(theme_node_modules_dir)
+def install_theme_dependencies() -> None:
+    subprocess.run(["npm", "install"], cwd=theme_dir)
+
+@ku.file(css_path)
+@ku.depend(theme_node_modules_dir, *scss_paths)
+def build_theme() -> None:
+    subprocess.run(["npm", "run", "build"], cwd=theme_dir)
+
+
+# Open PDF (for mac) ----------
+
+@ku.task("open")
+@ku.help("Open PDF.")
+@ku.depend("build")
+def open_pdf() -> None:
+    subprocess.run(["open", str(pdf_path)])
 
 
 # Delete outputs ----------

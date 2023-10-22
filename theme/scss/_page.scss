@@ -1,0 +1,79 @@
+@page {
+    size: 148mm 210mm;  // A5
+    margin-top: 17mm;
+    margin-bottom: 12mm;
+    margin-left: 17mm;
+    margin-right: 17mm;
+}
+
+@page :left {
+    @top-left {
+        content: env(pub-title);
+        font-size: 1.2rem;
+        font-weight: 600;
+        vertical-align: bottom;
+        padding-bottom: 2rem;
+    }
+
+    @bottom-left {
+        content: counter(page);
+        font-size: 1.2rem;
+        font-weight: 600;
+        vertical-align: top;
+        padding-top: 1rem;
+    }
+}
+
+@page :right {
+    @top-right {
+        content: counter(chapter) "章 " env(doc-title);
+        font-size: 1.2rem;
+        font-weight: 600;
+        vertical-align: bottom;
+        padding-bottom: 2rem;
+    }
+
+    @bottom-right {
+        content: counter(page);
+        font-size: 1.2rem;
+        font-weight: 600;
+        vertical-align: top;
+        padding-top: 1rem;
+    }
+}
+
+@page :nth(1) {
+    // 1ページ目は左上、右上を表示しない
+    @top-left {
+        content: '';
+        border: none;
+    }
+    @top-right {
+        content: '';
+        border: none;
+    }
+}
+
+// 表紙用
+
+.cover {
+    page: cover;
+}
+
+@page cover {
+    margin: -3mm;
+
+    @top-left {
+        content: '';
+        border: none;
+    }
+    @top-right {
+        content: '';
+        border: none;
+    }
+}
+
+img.cover {
+    width: 154mm;
+    height: 216mm;
+}

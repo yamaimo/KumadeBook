@@ -1,3 +1,9 @@
+---
+link:
+  - rel: 'stylesheet'
+    href: 'countup.css'
+---
+
 # Kumadefileの書き方
 
 Kumadefileのデコレータの説明。

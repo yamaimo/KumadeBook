@@ -1,0 +1,25 @@
+// 色の設定
+
+// リンク --------------------
+
+$color-link-normal: #606060;
+$color-link-hover: $color-link-normal;
+$color-link-visited: $color-link-normal;
+
+// コード --------------------
+
+$color-code-block: black;
+$bgcolor-code-block: #e8e8e8;
+
+$color-code-inline: black;
+$bgcolor-code-inline: #e0e0e0;
+
+$color-code-keyword: black;
+$color-code-annotation: #101010;
+$color-code-identifier: #282828;
+$color-code-literal: #282828;
+$color-code-docstring: #404040;
+$color-code-comment: #404040;
+
+$color-code-inserted: #404040;
+$color-code-deleted: #202020;

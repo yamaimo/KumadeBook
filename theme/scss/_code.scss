@@ -1,0 +1,107 @@
+figure[class*='language-'] {
+    counter-increment: list;
+}
+
+figure[class*='language-'] {
+    margin: 0;
+    text-align: left;
+
+    figcaption {
+        font-size: 1rem;
+        font-weight: 600;
+
+        break-after: avoid;
+
+        margin: 0;
+        padding: 0.2rem 0;
+
+        &::before {
+            content: "リスト" counter(chapter) "." counter(list) "：";
+        }
+    }
+}
+
+code, pre {
+    font-family: 'M+ 1m', monospace;
+    font-size: 7pt;
+    line-height: 1.5;
+
+    text-shadow: none;
+    text-align: left;
+
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+/* Code blocks */
+pre {
+    color: $color-code-block;
+    background: $bgcolor-code-block;
+    padding: 1em;
+    margin: 0;
+    overflow: auto;
+    border-radius: 0.5em;
+
+    box-decoration-break: clone;
+}
+
+/* Inline code */
+:not(pre) > code {
+    color: $color-code-inline;
+    background-color: $bgcolor-code-inline;
+
+    padding: 0.1rem 0.3rem;
+    border-radius: 0.2em;
+    white-space: normal;
+}
+
+.token.keyword,
+.token.builtin {
+    color: $color-code-keyword;
+    font-weight: 500;
+}
+
+.token.annotation {
+    color: $color-code-annotation;
+    font-weight: 500;
+}
+
+.token.function,
+.token.class-name {
+    color: $color-code-identifier;
+}
+
+.token.boolean,
+.token.number,
+.token.string {
+    color: $color-code-literal;
+}
+
+.token.triple-quoted-string {
+    color: $color-code-docstring;
+}
+
+.token.comment {
+    color: $color-code-comment;
+}
+
+.token.inserted {
+    color: $color-code-inserted;
+    font-weight: 500;
+}
+
+.token.deleted {
+    color: $color-code-deleted;
+    font-weight: 500;
+}

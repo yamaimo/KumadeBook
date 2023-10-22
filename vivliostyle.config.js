@@ -2,7 +2,7 @@ module.exports = {
   title: 'タスクランナーkumade - Pythonで作業を自動化しよう',
   author: 'やまいも <hello@yamaimo.dev>',
   size: 'A5',
-  theme: '@vivliostyle/theme-techbook@^1.0.0',
+  theme: 'theme/theme_ebook.css',
   entry: [
     'cover1.md',
     'opening.md',

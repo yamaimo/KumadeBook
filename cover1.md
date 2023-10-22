@@ -1,3 +1,8 @@
-# 表1
+---
+class: "cover"
+link:
+  - rel: 'stylesheet'
+    href: 'reset_page.css'
+---
 
-表紙
+<img src="images/cover1.png" class="cover">

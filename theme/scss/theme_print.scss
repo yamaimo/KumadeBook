@@ -1,0 +1,16 @@
+/*
+ * For print
+ */
+
+@import '_var_print';
+@import '_base';
+@import '_head';
+@import '_code';
+@import '_footnote';
+@import '_page';
+@import '_toc';
+
+@page {
+    marks: crop cross;  /* トンボを付ける */
+    bleed: 3mm;         /* 塗り足し領域 */
+}

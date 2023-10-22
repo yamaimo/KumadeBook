@@ -1,0 +1,207 @@
+:root {
+    font-family: 'M+ 1p', sans-serif;
+    font-size: 8pt;
+    font-weight: 400;
+    line-height: 1.7;
+    widows: 1;
+    orphans: 1;
+    hyphens: auto;
+}
+
+body {
+    // まとめて書かないと上書きされてしまうので注意
+    counter-reset: section subsection fig tbl list cite footnote;
+}
+
+figure {
+    &.fig {
+        counter-increment: fig;
+    }
+
+    &.tbl {
+        counter-increment: tbl;
+    }
+}
+
+ol.cite-items {
+    li {
+        counter-increment: cite;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $color-link-normal;
+
+    &:hover {
+        text-decoration: underline;
+        color: $color-link-hover;
+    }
+
+    &:visited {
+        color: $color-link-visited;
+    }
+}
+
+p {
+    font-size: 1rem;
+    font-feature-settings: 'calt';
+    text-align: justify;
+}
+
+ul,
+ol {
+    padding-inline-start: 1.5em;
+}
+
+figure {
+    margin: 1.5rem auto;
+    text-align: center;
+
+    img {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 1rem;
+        border: 0.5pt solid black;
+    }
+
+    figcaption {
+        margin: 0 auto;
+        width: 90%;
+        font-size: 1rem;
+        font-weight: 600;
+        break-inside: avoid;
+    }
+
+    img[src$='.png'],
+    img[src$='.jpg'],
+    img[src$='.jpeg'],
+    img[src$='.gif'],
+    img[src$='.webp'] {
+        image-resolution: 350dpi;
+    }
+
+    &.fig {
+        figcaption::before {
+            content: 'Fig. ' counter(fig) ': ';
+            :root:lang(ja) & {
+                content: '図' counter(fig) ': ';
+            }
+        }
+    }
+
+    &.tbl {
+        figcaption::before {
+            content: 'Table ' counter(tbl) ': ';
+            :root:lang(ja) & {
+                content: '表' counter(tbl) ': ';
+            }
+        }
+    }
+}
+
+table {
+    display: table;
+    max-width: 100%;
+    margin: 1.5rem auto;
+    border-color: currentColor;
+    border-collapse: collapse;
+
+    tr,
+    th,
+    td {
+        break-inside: avoid;
+    }
+
+    th,
+    td {
+        padding: 0.25rem 1rem 0.25rem 0;
+        &:first-child {
+            padding-left: 1rem;
+        }
+        background-color: transparent;
+        border: 0;
+    }
+
+    th {
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+    }
+
+    tr {
+        $narrow-border-width: 0.4px;
+        box-shadow: 0 $narrow-border-width + 0.3px 0 -0.3px currentColor;
+    }
+
+    tr:last-child {
+        border-bottom: 1px solid;
+    }
+}
+
+blockquote {
+    margin: 1.5rem 0.5rem;
+    background-color: #ecf0f1;
+    padding: 0.5em 1em;
+    border-radius: 0.2rem;
+
+    :not(pre) > code {
+        padding: 0;
+        word-break: break-all;
+    }
+}
+
+.page-break {
+    break-before: page;
+}
+
+a[data-ref='sec'],
+a[data-ref='subsec'],
+a[data-ref='fig'],
+a[data-ref='tbl'],
+a[data-ref='cite'] {
+    text-decoration: none;
+    color: inherit;
+    margin: 0 0.15em;
+}
+
+a[data-ref='sec']::before {
+    content: '§' target-counter(attr(href), section);
+}
+
+a[data-ref='subsec']::before {
+    content: '§' target-counter(attr(href), section) '.'
+        target-counter(attr(href url), subsection);
+}
+
+a[data-ref='fig']::before {
+    content: 'Fig. ' target-counter(attr(href), fig);
+    :root:lang(ja) & {
+        content: '図' target-counter(attr(href), fig);
+    }
+}
+
+a[data-ref='tbl']::before {
+content: 'Table ' target-counter(attr(href), tbl);
+    :root:lang(ja) & {
+        content: '表' target-counter(attr(href), fig);
+    }
+}
+
+a[data-ref='cite']::before {
+    content: '[' target-counter(attr(href), cite) ']';
+}
+
+ol.cite-items {
+    padding-left: 2rem;
+    list-style: none;
+
+    li {
+        counter-increment: cite;
+        position: relative;
+        &::before {
+            content: '[' counter(cite) '] ';
+            position: absolute;
+            left: -2rem;
+        }
+    }
+}

@@ -1,0 +1,64 @@
+section#toc {
+    // カウンタ
+    ol {
+        counter-reset: chap;
+        li {
+            counter-increment: chap;
+            ol {
+                counter-reset: sec;
+                li {
+                    counter-increment: sec;
+                }
+            }
+        }
+    }
+
+    ol {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    a {
+        color: currentColor;
+
+        // ページ番号
+        &::after {
+            font-size: 1rem;
+            content: target-counter(attr(href), page);
+            text-align: right;
+            margin-left: auto;
+        }
+    }
+
+    ol li {
+        a {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: baseline;
+            margin-top: 1.3rem;
+            margin-bottom: 0.3rem;
+
+            // 章番号
+            &::before {
+                content: counter(chap) "章";
+                font-size: 1rem;
+                margin-right: 1rem;
+            }
+        }
+
+        ol li {
+            a {
+                font-size: 1.2rem;
+                margin-top: 0;
+
+                // 節番号
+                &::before {
+                    content: counter(chap) "." counter(sec) " ";
+                    font-size: 1rem;
+                    margin-left: 4.2rem;
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+}

@@ -1,4 +1,4 @@
-# はじめに
+# はじめに {#opening .no_chap}
 
 FIXME: まえがきを書く
 

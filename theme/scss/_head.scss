@@ -1,0 +1,110 @@
+@page :first {
+    counter-reset: chapter;
+}
+
+section {
+    h2 {
+        counter-increment: section;
+    }
+    counter-reset: subsection;
+    article {
+        counter-increment: subsection;
+    }
+}
+
+h1,
+h2,
+h3 {
+    font-feature-settings: 'palt', 'calt';
+    break-after: avoid;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 2;
+    text-align: left;
+    padding-bottom: 3rem;
+
+    &:not(.no_chap) {
+        &::before {
+            content: counter(chapter) "章 ";
+            font-size: 2.5rem;
+            font-weight: 400;
+        }
+    }
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 3rem;
+
+    &::before {
+        content: counter(chapter) "." counter(section) " ";
+    }
+}
+
+h3 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+section.no_chap {
+    h2::before {
+        // 番号つけない
+        content: '';
+    }
+}
+
+section#opening {
+    h1 {
+        break-before: right;
+    }
+}
+
+section#closing {
+    dt {
+        float: left;
+        font-weight: 600;
+    }
+    dd {
+        margin-left: 4rem;
+        &::before {
+            content: ": ";
+            font-weight: 600;
+        }
+    }
+
+    h3::before {
+        content: '';
+        display: inline-block;
+        vertical-align: bottom;
+        margin-bottom: -4pt;
+        margin-right: 4pt;
+        width: 24pt;
+        height: 24pt;
+        background-image: url("../images/logo.png");
+        background-size: 24pt 24pt;
+        background-repeat: no-repeat;
+    }
+}
+
+// 奥付
+section#colophon {
+	position: relative;
+	float-reference: page;
+	float: bottom;
+	margin-bottom: 0;
+    border-bottom: 0.5pt solid black;
+
+    h2 {
+        font-size: 1.5rem;
+        border-bottom: 0.5pt solid black;
+    }
+
+    dd {
+        margin-left: 2.5rem;
+    }
+}
