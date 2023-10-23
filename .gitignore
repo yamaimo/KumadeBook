@@ -130,10 +130,7 @@ dist
 .pnp.*
 
 # Output files
-*.html
-*.pdf
-publication.json
-themes/
+build_*
 
 # Python
 __pycache__/

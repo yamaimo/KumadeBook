@@ -1,4 +1,4 @@
-section#toc {
+section:has(> #toc) {
     // カウンタ
     ol {
         counter-reset: chap;

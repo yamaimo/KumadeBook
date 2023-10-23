@@ -51,20 +51,20 @@ h3 {
     line-height: 1.2;
 }
 
-section.no_chap {
+section:has(> .no_chap) {
     h2::before {
         // 番号つけない
         content: '';
     }
 }
 
-section#opening {
+section:has(> #opening) {
     h1 {
         break-before: right;
     }
 }
 
-section#closing {
+section:has(> #closing) {
     dt {
         float: left;
         font-weight: 600;
@@ -92,7 +92,7 @@ section#closing {
 }
 
 // 奥付
-section#colophon {
+section:has(> #colophon) {
 	position: relative;
 	float-reference: page;
 	float: bottom;
