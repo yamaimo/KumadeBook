@@ -134,3 +134,5 @@ build_*
 
 # Python
 __pycache__/
+
+.DS_Store
