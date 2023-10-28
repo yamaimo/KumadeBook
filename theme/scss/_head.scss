@@ -91,12 +91,45 @@ section:has(> #closing) {
     }
 }
 
+// コラム
+section:has(> .column) {
+    position: relative;
+    float-reference: page;
+    float: bottom;
+    margin-bottom: 0;
+    border-bottom: 4pt solid silver;
+
+    h2 {
+        font-size: 1.5rem;
+        line-height: 1.2;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: 'コラム：';
+        }
+
+        &::after {
+            content: '';
+            margin-left: 1rem;
+            height: 4pt;
+            flex-grow: 1;
+            background-color: silver;
+        }
+    }
+}
+
+section:has(> #column1) {
+    // 下に脚注があるので空きを入れる
+    margin-bottom: 2rem;
+}
+
 // 奥付
 section:has(> #colophon) {
-	position: relative;
-	float-reference: page;
-	float: bottom;
-	margin-bottom: 0;
+    position: relative;
+    float-reference: page;
+    float: bottom;
+    margin-bottom: 0;
     border-bottom: 0.5pt solid black;
 
     h2 {
