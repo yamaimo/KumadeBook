@@ -14,4 +14,4 @@ py_version = "py311"
 paths = ["."]
 
 [tool.pysen.lint.source]
-excludes = ["Kumadefile.py"]
+excludes = ["Kumadefile.py", "getstart/Kumadefile.py"]
