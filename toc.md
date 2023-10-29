@@ -8,4 +8,7 @@
     2. [タスクの定義](chap2_getstart.html#chap2_2)
     3. [タスクの実行](chap2_getstart.html#chap2_3)
 3. [Kumadefileの書き方](chap3_kumadefile.html)
+    1. [基本](chap3_kumadefile.html#chap3_1)
+    2. [各種デコレータ](chap3_kumadefile.html#chap3_2)
+    3. [その他のトピック](chap3_kumadefile.html#chap3_3)
 4. [kumadeの活用例](chap4_usecase.html)
