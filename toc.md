@@ -12,3 +12,7 @@
     2. [各種デコレータ](chap3_kumadefile.html#chap3_2)
     3. [その他のトピック](chap3_kumadefile.html#chap3_3)
 4. [kumadeの活用例](chap4_usecase.html)
+    1. [組版のビルド自動化](chap4_usecase.html#chap4_1)
+    2. [Markdownの前処理](chap4_usecase.html#chap4_2)
+    3. [ディレクトリ構成](chap4_usecase.html#chap4_3)
+    4. [ビルドのタスク定義](chap4_usecase.html#chap4_4)
