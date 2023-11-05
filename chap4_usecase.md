@@ -605,4 +605,32 @@ pp_md_print        # Preprocess sources for print.
 
 ## 同人誌紹介（その3） {.column}
 
-FIXME: 同人誌を紹介する（2~3冊）
+### Math Poker Girl
+
+![](images/MathPokerGirl.png)
+
+https://imoarai.booth.pm/items/1558968
+
+ポーカー（テキサス・ホールデム）について数学的に考察する本です。
+ルールの説明もあります。
+世に出回ってるフワッとした言説の真実を数学の力で暴きます。
+
+### コウモリ少女に恋してる 数理最適化入門
+
+![](images/OptGirl.png)
+
+https://imoarai.booth.pm/items/1873654
+
+数理最適化の入門書です。
+物語を通して数理最適化の概要と線形計画問題について学びます。
+モデリング、理論、アルゴリズム、ソルバーの利用と、幅広い内容を知ることができます。
+
+### 不確実な世界で意思決定する技術
+
+![](images/StochasticOpt.png)
+
+https://imoarai.booth.pm/items/2397832
+
+不確実性のある最適化問題を扱った本です。
+実務で数理最適化を使おうとすると不確実性の問題は避けて通れません。
+それに対する手段の一つとして確率計画法を説明しています。

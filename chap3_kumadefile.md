@@ -243,4 +243,24 @@ def build() -> None:
 
 ## 同人誌紹介（その2） {.column}
 
-FIXME: 同人誌を紹介する（2~3冊）
+### lain, anonymous insight note
+
+![](images/LainNote.png)
+
+https://imoarai.booth.pm/items/1712598
+
+1998年放映のアニメ『serial experiments lain』の考察を通して、
+人工知能の要件を考える本です。
+技術的な側面だけでなく哲学的な側面からも考えることで、
+本当にほしいものは何なのかという問いを深めます。
+
+### 哲学散歩道 身体から眺めた世界
+
+![](images/PhilosophyWalk.png)
+
+https://imoarai.booth.pm/items/1680540
+
+「正しいとはどういうことなのか？」について、
+数学、論理学、哲学などの観点から考察を深める本です。
+その中で「関係性」や「身体性」についても議論します。
+上記のlain本の根底にある考えでもあります。
