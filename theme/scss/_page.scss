@@ -54,6 +54,23 @@
     }
 }
 
+// あとがき用
+
+.closing {
+    page: closing;
+}
+
+@page closing {
+    @top-left {
+        content: '';
+        border: none;
+    }
+    @top-right {
+        content: '';
+        border: none;
+    }
+}
+
 // 表紙用
 
 .cover {

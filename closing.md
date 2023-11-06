@@ -1,3 +1,7 @@
+---
+class: "closing"
+---
+
 # おわりに {#closing .no_chap}
 
 どうも、やまいもです。
